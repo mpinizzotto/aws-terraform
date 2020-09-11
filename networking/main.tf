@@ -23,3 +23,13 @@ resource "aws_route_table" "project-public-rt" {
 
     tags = "${var.public-rt-tags}"
 }
+
+resource "aws_default_route_table" "project-private-rt" {
+    default_route_table_id = "${aws_vpc.project-vpc.default_route_table_id}"
+    tags = "${var.private-rt-tags}"
+}
+
+
+
+
+

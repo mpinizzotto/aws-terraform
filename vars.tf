@@ -31,3 +31,7 @@ variable "igw-tags" {
 variable "public-rt-tags" {
     description = "Public route tags"
 }
+
+variable "private-rt-tags" {
+    description = "Private route tags"
+}

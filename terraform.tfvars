@@ -29,3 +29,8 @@ public-rt-tags = {
   Name = "acme-public-rt"
   Environment = "Dev"
 }
+
+private-rt-tags = {
+  Name = "acme-private-rt"
+  Environment = "Dev"
+}

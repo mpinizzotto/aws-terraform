@@ -17,4 +17,5 @@ module "networking" {
     vpc-tags = "${var.vpc-tags}"
     igw-tags = "${var.igw-tags}"
     public-rt-tags = "${var.public-rt-tags}"
+    private-rt-tags = "${var.private-rt-tags}"
 }
