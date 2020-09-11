@@ -1,3 +1,3 @@
-variable "project_name" {
-  default = "acme-website"
-}
+variable "project-name" {}
+variable "bucket-acl" {}
+variable "bucket-tags" {}

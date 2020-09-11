@@ -5,11 +5,8 @@ resource "random_id" "s3_bucket_id" {
 
 #create s3 bucket
 resource "aws_s3_bucket" "code_bucket" {
-  bucket = "${var.project_name}-${random_id.s3_bucket_id.dec}"
-  acl = "private"
+  bucket = "${var.project-name}-${random_id.s3_bucket_id.dec}"
+  acl = "${var.bucket-acl}"
   force_destroy = true
-  tags = {
-    Name = "acme-bucket"
-    Environment = "Dev"
-  }
+  tags = "${var.bucket-tags}"
 }
