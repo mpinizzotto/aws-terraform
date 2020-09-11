@@ -1,3 +1,5 @@
+#storage main.tf
+
 #create random id for s3 bucket
 resource "random_id" "s3_bucket_id" {
   byte_length = 2
