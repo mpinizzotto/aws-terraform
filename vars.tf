@@ -35,3 +35,15 @@ variable "public-rt-tags" {
 variable "private-rt-tags" {
     description = "Private route tags"
 }
+
+variable "public-cidr" {
+    description = "Public vpc subnets"
+}
+
+variable "public-subnet-tags" {
+    description = "Public subnet tags"
+}
+
+variable "external-access-ip" {}
+variable "public-sg" {}
+variable "public-sg-tags" {}

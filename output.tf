@@ -1,15 +1,15 @@
-output "Bucket_Name" {
+output "s3_bucket_name" {
   value = "${module.storage.bucket-name}"
 }
 
-output "S3_Region_Name" {
+output "s3_region_name" {
   value = "${module.storage.s3-region-name}"
 }
 
-output "IGW_Name" {
+output "igw_name" {
   value = "${module.networking.igw-name}"
 }
 
-output "VPC_Name" {
+output "vpc_name" {
   value = "${module.networking.vpc-name}"
 }

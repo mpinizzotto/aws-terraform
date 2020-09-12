@@ -7,3 +7,5 @@ output "vpc-name" {
 output "igw-name" {
   value = "${aws_internet_gateway.project-igw.id}"
 }
+
+
