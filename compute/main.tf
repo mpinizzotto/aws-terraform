@@ -5,11 +5,6 @@ data "aws_ami" "project-compute-ami" {
   owners = ["amazon"]
     
   filter {
-    name = "owner-alias"
-    values = ["amazon"]
-  }
-    
-  filter {
     name = "name"
     values = ["amzn-ami-hvm*-x86_64-gp2"]
   }
