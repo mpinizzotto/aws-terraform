@@ -26,3 +26,13 @@ module "networking" {
     public-sg-tags = "${var.public-sg-tags}"
     external-access-ip = "${var.external-access-ip}"
 }
+
+
+module "compute" {
+    source = "./compute"
+    public-key-name = "${var.public-key-name}"
+    public-key-path = "${var.public-key-path}"
+}
+
+
+

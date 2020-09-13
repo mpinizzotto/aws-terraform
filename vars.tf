@@ -47,3 +47,8 @@ variable "public-subnet-tags" {
 variable "external-access-ip" {}
 variable "public-sg" {}
 variable "public-sg-tags" {}
+
+#Compute
+
+variable "public-key-name" {}
+variable "public-key-path" {}

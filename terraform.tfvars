@@ -50,3 +50,9 @@ public-sg-tags = {
 }
 
 external-access-ip = "0.0.0.0/0"
+
+#Compute
+
+public-key-name = "project-keys"
+public-key-path = "/home/ubuntu/.ssh/id_rsa.pub"
+
