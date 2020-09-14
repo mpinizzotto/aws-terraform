@@ -1,13 +1,13 @@
 #root .tfvars
 
-aws-region = "us-east-1"
+aws-region   = "us-east-1"
 project-name = "foo-website"
 
 #s3 vars
 bucket-acl = "private"
 
 bucket-tags = {
-  Name = "foo-bucket"
+  Name        = "foo-bucket"
   Environment = "dev"
 }
 
@@ -16,22 +16,22 @@ bucket-tags = {
 vpc-cidr-block = "10.0.0.0/17"
 
 vpc-tags = {
-  Name = "foo-vpc"
+  Name        = "foo-vpc"
   Environment = "dev"
 }
 
 igw-tags = {
-  Name = "foo-igw"
+  Name        = "foo-igw"
   Environment = "dev"
 }
 
 public-rt-tags = {
-  Name = "foo-public-rt"
+  Name        = "foo-public-rt"
   Environment = "dev"
 }
 
 private-rt-tags = {
-  Name = "foo-private-rt"
+  Name        = "foo-private-rt"
   Environment = "dev"
 }
 
@@ -45,7 +45,7 @@ public-subnet-tags = {
 public-sg = "foo-public-sg"
 
 public-sg-tags = {
-  Name = "foo-public-sg"
+  Name        = "foo-public-sg"
   Environment = "dev"
 }
 
