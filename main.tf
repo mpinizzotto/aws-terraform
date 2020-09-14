@@ -30,8 +30,16 @@ module "networking" {
 
 module "compute" {
     source = "./compute"
+    project-name = "${var.project-name}"
     public-key-name = "${var.public-key-name}"
     public-key-path = "${var.public-key-path}"
+    instance-count = "${var.instance-count}"
+    instance-type = "${var.instance-type}"
+    #subnet ids
+    subnets = "${module.networking.public-subnet}"
+    #cidrs
+    subnet-ips = "${module.networking.public-subnet-ips}"
+    security-group = "${module.networking.public-sg}"
 }
 
 

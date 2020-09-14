@@ -10,7 +10,7 @@ variable "subnet-ips" {
     type = list
 }
 
-#subnet ids
+#aws subnet ids
 variable "subnets" {}
 
 variable "instance-count" {}

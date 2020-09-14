@@ -49,6 +49,10 @@ variable "public-sg" {}
 variable "public-sg-tags" {}
 
 #Compute
-
 variable "public-key-name" {}
 variable "public-key-path" {}
+
+variable "instance-count" {
+    default = 1
+}
+variable "instance-type" {}

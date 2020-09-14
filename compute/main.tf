@@ -13,7 +13,7 @@ data "aws_ami" "project-compute-ami" {
 data "template_file" "user-init" {
   count = 2
   template = "${file("${path.module}/userdata.tpl")}"
-  vars {
+  vars = {
     compute-server-subnets = "${element(var.subnet-ips, count.index)}"
   }
 }
@@ -26,9 +26,9 @@ resource "aws_key_pair" "project-auth" {
 resource "aws_instance" "project-instance" {
   count = "${var.instance-count}"
   instance_type = "${var.instance-type}"
-  ami = "${var.aws_ami.project-compute-ami.id}"
-  tags {
-    Name = "${project-name}-${count.index +1}"
+  ami = "${data.aws_ami.project-compute-ami.id}"
+  tags = {
+    Name = "${var.project-name}-${count.index +1}"
     Environment = "dev"
   }
   key_name = "${aws_key_pair.project-auth.id}"
