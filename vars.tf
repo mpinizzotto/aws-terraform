@@ -48,7 +48,13 @@ variable "external-access-ip" {}
 variable "public-sg" {}
 variable "public-sg-tags" {}
 
-#Compute
+#####Compute#####
+
+#ami owner
+variable "ami-owners" {}
+#ami name filter
+variable "ami-names" {}
+
 variable "public-key-name" {}
 variable "public-key-path" {}
 

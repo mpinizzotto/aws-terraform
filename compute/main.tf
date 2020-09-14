@@ -2,11 +2,13 @@
 
 data "aws_ami" "project-compute-ami" {
   most_recent = true 
-  owners = ["amazon"]
+  owners = ["${var.ami-owners}"]
     
   filter {
     name = "name"
-    values = ["amzn-ami-hvm*-x86_64-gp2"]
+    #values = ["amzn-ami-hvm*-x86_64-gp2"]
+    values = ["${var.ami-names}"]
+    
   }
 }
 
@@ -20,9 +22,9 @@ data "template_file" "user-init" {
 
 resource "aws_key_pair" "project-auth" {
   key_name = "${var.public-key-name}"
+
   public_key = "${file(var.public-key-path)}"
 }
-
 resource "aws_instance" "project-instance" {
   count = "${var.instance-count}"
   instance_type = "${var.instance-type}"
@@ -35,5 +37,4 @@ resource "aws_instance" "project-instance" {
   vpc_security_group_ids = ["${var.security-group}"]
   subnet_id = "${element(var.subnets, count.index)}"
   user_data = "${data.template_file.user-init.*.rendered[count.index]}"
-  
 }

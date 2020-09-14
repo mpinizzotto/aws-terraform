@@ -31,6 +31,8 @@ module "networking" {
 module "compute" {
     source = "./compute"
     project-name = "${var.project-name}"
+    ami-owners = "${var.ami-owners}" 
+    ami-names = "${var.ami-names}"
     public-key-name = "${var.public-key-name}"
     public-key-path = "${var.public-key-path}"
     instance-count = "${var.instance-count}"

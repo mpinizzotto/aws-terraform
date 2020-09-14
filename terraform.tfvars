@@ -53,6 +53,10 @@ external-access-ip = "0.0.0.0/0"
 
 #Compute
 
+ami-owners = "amazon"
+
+ami-names = "amzn-ami-hvm*-x86_64-gp2"
+
 public-key-name = "project-keys"
 
 public-key-path = "/home/ubuntu/.ssh/id_rsa.pub"

@@ -1,6 +1,12 @@
 #compute vars.tf
 variable "project-name" {}
 
+#ami owner
+variable "ami-owners" {}
+    
+#ami name filter
+variable "ami-names" {}
+
 variable "public-key-name" {}
 
 variable "public-key-path" {}
