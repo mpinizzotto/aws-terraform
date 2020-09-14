@@ -1,51 +1,51 @@
 #root .tfvars
 
 aws-region = "us-east-1"
-project-name = "wordpress-website"
+project-name = "matty-website"
 
 #s3 vars
 bucket-acl = "private"
 
 bucket-tags = {
-  Name = "wordpress-bucket"
+  Name = "matty-bucket"
   Environment = "dev"
 }
 
 #Networking vars
 
-vpc-cidr-block = "10.142.0.0/16"
+vpc-cidr-block = "10.0.0.0/17"
 
 vpc-tags = {
-  Name = "wordpress-vpc"
+  Name = "matt-vpc"
   Environment = "dev"
 }
 
 igw-tags = {
-  Name = "wordpress-igw"
+  Name = "matty-igw"
   Environment = "dev"
 }
 
 public-rt-tags = {
-  Name = "wordpress-public-rt"
+  Name = "matty-public-rt"
   Environment = "dev"
 }
 
 private-rt-tags = {
-  Name = "wordpress-private-rt"
+  Name = "matty-private-rt"
   Environment = "dev"
 }
 
-public-cidr = ["10.142.32.0/24", "10.142.33.0/24"]
+public-cidr = ["10.0.1.0/24", "10.0.2.0/24"]
 
 public-subnet-tags = {
-  Name = "wordpress-public-subnet"
+  Name = "matty-public-subnet"
 }
 
 #Security
-public-sg = "wordpress-public-sg"
+public-sg = "matty-public-sg"
 
 public-sg-tags = {
-  Name = "wordpress-public-sg"
+  Name = "matty-public-sg"
   Environment = "dev"
 }
 

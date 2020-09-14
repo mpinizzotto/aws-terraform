@@ -13,3 +13,7 @@ output "igw_name" {
 output "vpc_name" {
   value = "${module.networking.vpc-name}"
 }
+
+output "instance_public_ip" {
+  value = "${module.compute.instance-public-ip}"
+}

@@ -38,3 +38,4 @@ resource "aws_instance" "project-instance" {
   subnet_id = "${element(var.subnets, count.index)}"
   user_data = "${data.template_file.user-init.*.rendered[count.index]}"
 }
+
