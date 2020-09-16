@@ -68,3 +68,10 @@ variable "instance-count" {
   default = 1
 }
 variable "instance-type" {}
+
+
+#elb
+
+variable "elb-name" {}
+
+variable "elb-tags" {}

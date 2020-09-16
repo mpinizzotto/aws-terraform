@@ -71,3 +71,12 @@ public-key-path = "/home/ubuntu/.ssh/id_rsa.pub"
 instance-count = 2
 
 instance-type = "t2.micro"
+
+#Elb
+
+elb-name = "foo-elb"
+
+elb-tags = {
+  Name        = "foo-elb"
+  Environment = "dev"
+}

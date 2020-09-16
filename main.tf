@@ -56,5 +56,13 @@ module "compute" {
   security-group  = "${module.networking.public-sg}"
 }
 
+module "elb" {
+  source      = "./elb"
+  elb-name    = "${var.elb-name}"
+  elb-sg-id   = "${module.networking.elb-sg}"
+  instance-id = "${module.compute.instance-id}"
+  elb-tags    = "${var.elb-tags}"
+  subnets     = "${module.networking.public-subnet}"
+}
 
 

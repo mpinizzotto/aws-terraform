@@ -19,3 +19,7 @@ output "vpc_name" {
 output "instance_public_ips" {
   value = "${join(", ", module.compute.instance-public-ip)}"
 }
+
+output "instance_id" {
+  value = "${module.compute.instance-id}"
+}
