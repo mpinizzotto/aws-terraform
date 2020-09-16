@@ -16,10 +16,14 @@ output "vpc_name" {
   value = "${module.networking.vpc-name}"
 }
 
+output "elb_dns_name" {
+    value = "${module.elb.elb-dns-name}"
+}
+
 output "instance_public_ips" {
   value = "${join(", ", module.compute.instance-public-ip)}"
 }
 
-output "instance_id" {
-  value = "${module.compute.instance-id}"
-}
+#output "instance_id" {
+#  value = "${module.compute.instance-id}"
+#}
