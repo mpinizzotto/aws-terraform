@@ -56,6 +56,7 @@ elb-sg-tags = {
   Environment = "dev"
 }
 
+#TODO create vars for instance access and elb access
 external-access-ip = "0.0.0.0/0"
 
 #Compute
