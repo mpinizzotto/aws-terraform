@@ -1,12 +1,12 @@
 #root main.tf
 
-terraform {
-  backend "s3" {
-    bucket = "terraform"
-    key = "terraform/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
+#terraform {
+#  backend "s3" {
+#    bucket = "terraform"
+#    key = "terraform/terraform.tfstate"
+#    region = "us-east-1"
+#  }
+#}
 
 provider "aws" {
   region = "${var.aws-region}"
@@ -34,6 +34,9 @@ module "networking" {
   public-sg          = "${var.public-sg}"
   public-sg-tags     = "${var.public-sg-tags}"
   external-access-ip = "${var.external-access-ip}"
+  elb-sg             = "${var.elb-sg}"
+  elb-sg-tags        = "${var.elb-sg-tags}"
+
 }
 
 

@@ -19,3 +19,8 @@ output "public-subnet-ips" {
 output "public-sg" {
   value = "${aws_security_group.project-public-sg.id}"
 }
+
+output "elb-sg" {
+  value = "${aws_security_group.project-elb-sg.id}"
+}
+

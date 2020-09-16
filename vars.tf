@@ -45,8 +45,14 @@ variable "public-subnet-tags" {
 }
 
 variable "external-access-ip" {}
+
 variable "public-sg" {}
+
 variable "public-sg-tags" {}
+
+variable "elb-sg" {}
+
+variable "elb-sg-tags" {}
 
 #####Compute#####
 

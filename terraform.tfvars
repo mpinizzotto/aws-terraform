@@ -49,6 +49,13 @@ public-sg-tags = {
   Environment = "dev"
 }
 
+elb-sg = "foo-elb-sg"
+
+elb-sg-tags = {
+  Name        = "foo-elb-sg"
+  Environment = "dev"
+}
+
 external-access-ip = "0.0.0.0/0"
 
 #Compute

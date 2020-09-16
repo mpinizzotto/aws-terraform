@@ -48,6 +48,7 @@ resource "aws_route_table_association" "project-public-subnet-assoc" {
     route_table_id = "${aws_route_table.project-public-rt.id}"
 }
 
+#instance public rules
 resource "aws_security_group" "project-public-sg" {
     name = "${var.public-sg}"
     description = "Rules for access to public instances"
@@ -81,3 +82,32 @@ resource "aws_security_group_rule" "any-out" {
     cidr_blocks = ["0.0.0.0/0"]
     security_group_id = "${aws_security_group.project-public-sg.id}"
 }
+
+#elb security rules
+
+resource "aws_security_group" "project-elb-sg" {
+    name = "${var.elb-sg}"
+    description = "Rules for access to elb"
+    vpc_id = "${aws_vpc.project-vpc.id}"
+    tags = "${var.elb-sg-tags}"
+}
+    
+resource "aws_security_group_rule" "elb-allow-in" {
+    type = "ingress"
+    to_port = 0
+    from_port = 0
+    protocol = "tcp"
+    cidr_blocks = ["${var.external-access-ip}"]
+    security_group_id = "${aws_security_group.project-elb-sg.id}"
+} 
+
+resource "aws_security_group_rule" "elb-allow-out" {
+    type = "egress"
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    security_group_id = "${aws_security_group.project-elb-sg.id}"
+}
+
+
